@@ -33,10 +33,10 @@
           <router-link to="/serve" class="text-gray-700 hover:text-gray-900">บริการ</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="#about">เกี่ยวกับเรา</router-link>
+          <router-link to="/about" class="text-gray-700 hover:text-gray-900">เกี่ยวกับเรา</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="#contact">ติดต่อเรา</router-link>
+          <router-link to="/contact" class="text-gray-700 hover:text-gray-900">ติดต่อเรา</router-link>
         </li>
       </ul>
 
