@@ -4,6 +4,7 @@ import LoginView from '../views/Login.vue'; // นำเข้า LoginView
 import ServeView from '../views/Serve.vue'; // 
 import AboutView from '../views/About.vue'; // 
 import ContactView from '../views/Contact.vue'; //
+import TemplateView from '../views/Template.vue'; //
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     name: 'Contact',
     component: ContactView, // เพิ่มเส้นทางไปที่หน้า Contact
   },
+  {
+    path: '/template',
+    name: 'Template',
+    component: TemplateView, // เพิ่มเส้นทางไปที่หน้า Template
+  }
 ];
 
 const router = createRouter({

@@ -92,6 +92,14 @@
   <script>
   export default {
     name: 'Contact',
+    mounted() {
+      // สมมติจำลองโหลด 2 วินาที
+      this.$emit('loading', true);
+  
+      setTimeout(() => {
+        this.$emit('loading', false);
+      }, 300);
+    }
   };
   </script>
   

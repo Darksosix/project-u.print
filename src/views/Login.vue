@@ -411,6 +411,14 @@ export default {
       passwordConfirm: '',
     }
   },
+  mounted() {
+    // สมมติจำลองโหลด 2 วินาที
+    this.$emit('loading', true);
+
+    setTimeout(() => {
+      this.$emit('loading', false);
+    }, 300);
+  },
   methods: {
     handleLogin() {
       console.log('Login:', { email: this.email, password: this.password });
