@@ -36,7 +36,8 @@ const routes = [
     path: '/template',
     name: 'Template',
     component: TemplateView, // เพิ่มเส้นทางไปที่หน้า Template
-  }
+  },
+  
 ];
 
 const router = createRouter({
