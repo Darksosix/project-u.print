@@ -22,7 +22,7 @@
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import LoadingSpinner from './components/LoadingSpinner.vue' // สมมติว่ามีไฟล์นี้
+import LoadingSpinner from './components/LoadingSpinner.vue' 
 
 export default {
   name: 'App',
@@ -45,11 +45,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Anakotmai:wght@300;400;700&display=swap');
-
-.font-anakotmai {
-  font-family: 'Anakotmai', sans-serif;
-}
 
 /* ============ Page Transition (Fade ตัวอย่าง) ============ */
 .page-enter-active,
@@ -61,20 +56,4 @@ export default {
   /* ก่อนเข้ากับหลังออก = 0 */
   opacity: 0;
 }
-
-/* 
-หากอยากได้ Slide/Flip/Bounce โหด ๆ:
-.page-enter-active,
-.page-leave-active {
-  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s;
-}
-.page-enter {
-  transform: translateX(100%);
-  opacity: 0;
-}
-.page-leave-to {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-*/
 </style>

@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import LoginView from '../views/Login.vue'; // นำเข้า LoginView
-import ServeView from '../views/Serve.vue'; // 
-import AboutView from '../views/About.vue'; // 
-import ContactView from '../views/Contact.vue'; //
-import TemplateView from '../views/Template.vue'; //
+import LoginView from '../views/Login.vue';
+import ServeView from '../views/Serve.vue';
+import AboutView from '../views/About.vue';
+import ContactView from '../views/Contact.vue';
+import TemplateView from '../views/Template.vue';
+import OnboardingPageView from '../views/OnboardingPage.vue'; // นำเข้า OnboardingPageView
 
 const routes = [
   {
@@ -15,29 +16,33 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: LoginView, // เพิ่มเส้นทางไปที่หน้า Login
+    component: LoginView,
   },
   {
     path: '/serve',
     name: 'Serve',
-    component: ServeView, // เพิ่มเส้นทางไปที่หน้า Serve
+    component: ServeView,
   },
   {
     path: '/about',
     name: 'About',
-    component: AboutView, // เพิ่มเส้นทางไปที่หน้า About
+    component: AboutView,
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: ContactView, // เพิ่มเส้นทางไปที่หน้า Contact
+    component: ContactView,
   },
   {
     path: '/template',
     name: 'Template',
-    component: TemplateView, // เพิ่มเส้นทางไปที่หน้า Template
+    component: TemplateView,
   },
-  
+  {
+    path: '/onboarding',
+    name: 'OnboardingPage',
+    component: OnboardingPageView, // เพิ่มเส้นทางไปที่หน้า OnboardingPage
+  },
 ];
 
 const router = createRouter({

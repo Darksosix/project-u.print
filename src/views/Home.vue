@@ -40,13 +40,15 @@
         class="flex flex-col sm:flex-row justify-center items-center
                space-y-4 sm:space-y-0 sm:space-x-4"
       >
-        <button
-          class="px-8 py-3 bg-pink-500 text-white font-bold rounded-full shadow-xl
-                 hover:bg-pink-600 hover:-translate-y-1 transform transition
-                 focus:outline-none"
-        >
-          เริ่มต้นใช้งาน
-        </button>
+      <router-link to="/onboarding">
+  <button
+    class="px-8 py-3 bg-pink-500 text-white font-bold rounded-full shadow-xl
+           hover:bg-pink-600 hover:-translate-y-1 transform transition
+           focus:outline-none"
+  >
+    เริ่มต้นใช้งาน
+  </button>
+</router-link>
         <router-link to="/template">
           <button
             class="px-8 py-3 bg-gray-800 text-white font-bold rounded-full shadow-xl
