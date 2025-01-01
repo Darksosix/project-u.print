@@ -2,12 +2,11 @@
   <div
     class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 via-white to-yellow-50 overflow-hidden"
   >
-    <!-- วงกลมสีชมพูเคลื่อนไหว -->
+    <!-- วงกลม BG -->
     <div
       class="absolute w-96 h-96 bg-pink-200 rounded-full
              -top-20 -right-40 opacity-40 animate-pulse pointer-events-none"
     ></div>
-    <!-- วงกลมสีเหลืองเคลื่อนไหว -->
     <div
       class="absolute w-96 h-96 bg-yellow-200 rounded-full
              -bottom-20 -left-40 opacity-40 animate-bounce pointer-events-none"
@@ -159,21 +158,15 @@
             สร้างบัญชีใหม่เพื่อเข้าถึงบริการของเราได้ทันที
           </p>
 
-          <!-- ฟอร์ม Register แบ่งเป็นสองคอลัมน์ (ซ้าย-ขวา) -->
-          <form
-            @submit.prevent="handleRegister"
-            class="max-h-[450px] overflow-auto pr-1 space-y-4"
-          >
+          <!-- ฟอร์ม Register -->
+          <form @submit.prevent="handleRegister" class="max-h-[450px] overflow-auto pr-1 space-y-4">
             <div class="grid grid-cols-2 gap-4">
-              <!-- โซนซ้าย: ข้อมูลส่วนบุคคล -->
+              <!-- โซนซ้าย -->
               <div class="space-y-4">
-                <!-- ชื่อ -->
                 <div>
-                  <label
-                    for="firstName"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >ชื่อ</label
-                  >
+                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                    ชื่อ
+                  </label>
                   <input
                     v-model="firstName"
                     type="text"
@@ -184,13 +177,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- นามสกุล -->
                 <div>
-                  <label
-                    for="lastName"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >นามสกุล</label
-                  >
+                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                    นามสกุล
+                  </label>
                   <input
                     v-model="lastName"
                     type="text"
@@ -201,13 +191,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- เบอร์โทร -->
                 <div>
-                  <label
-                    for="phoneNumber"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >เบอร์โทรศัพท์</label
-                  >
+                  <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-2">
+                    เบอร์โทรศัพท์
+                  </label>
                   <input
                     v-model="phoneNumber"
                     type="tel"
@@ -218,13 +205,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- อีเมล -->
                 <div>
-                  <label
-                    for="emailRegister"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >อีเมล</label
-                  >
+                  <label for="emailRegister" class="block text-sm font-medium text-gray-700 mb-2">
+                    อีเมล
+                  </label>
                   <input
                     v-model="email"
                     type="email"
@@ -235,13 +219,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- รหัสผ่าน -->
                 <div>
-                  <label
-                    for="passwordRegister"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >รหัสผ่าน</label
-                  >
+                  <label for="passwordRegister" class="block text-sm font-medium text-gray-700 mb-2">
+                    รหัสผ่าน
+                  </label>
                   <input
                     v-model="password"
                     type="password"
@@ -252,13 +233,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- ยืนยันรหัสผ่าน -->
                 <div>
-                  <label
-                    for="passwordConfirm"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >ยืนยันรหัสผ่าน</label
-                  >
+                  <label for="passwordConfirm" class="block text-sm font-medium text-gray-700 mb-2">
+                    ยืนยันรหัสผ่าน
+                  </label>
                   <input
                     v-model="passwordConfirm"
                     type="password"
@@ -270,15 +248,13 @@
                   />
                 </div>
               </div>
-              <!-- โซนขวา: ข้อมูลที่อยู่ -->
+
+              <!-- โซนขวา -->
               <div class="space-y-4">
-                <!-- ที่อยู่ -->
                 <div>
-                  <label
-                    for="address"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >ที่อยู่</label
-                  >
+                  <label for="address" class="block text-sm font-medium text-gray-700 mb-2">
+                    ที่อยู่
+                  </label>
                   <input
                     v-model="address"
                     type="text"
@@ -289,13 +265,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- แขวง/ตำบล -->
                 <div>
-                  <label
-                    for="subDistrict"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >แขวง / ตำบล</label
-                  >
+                  <label for="subDistrict" class="block text-sm font-medium text-gray-700 mb-2">
+                    แขวง / ตำบล
+                  </label>
                   <input
                     v-model="subDistrict"
                     type="text"
@@ -306,13 +279,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- เขต/อำเภอ -->
                 <div>
-                  <label
-                    for="district"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >เขต / อำเภอ</label
-                  >
+                  <label for="district" class="block text-sm font-medium text-gray-700 mb-2">
+                    เขต / อำเภอ
+                  </label>
                   <input
                     v-model="district"
                     type="text"
@@ -323,13 +293,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- จังหวัด -->
                 <div>
-                  <label
-                    for="province"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >จังหวัด</label
-                  >
+                  <label for="province" class="block text-sm font-medium text-gray-700 mb-2">
+                    จังหวัด
+                  </label>
                   <input
                     v-model="province"
                     type="text"
@@ -340,13 +307,10 @@
                            focus:border-transparent"
                   />
                 </div>
-                <!-- รหัสไปรษณีย์ -->
                 <div>
-                  <label
-                    for="zipCode"
-                    class="block text-sm font-medium text-gray-700 mb-2"
-                    >รหัสไปรษณีย์</label
-                  >
+                  <label for="zipCode" class="block text-sm font-medium text-gray-700 mb-2">
+                    รหัสไปรษณีย์
+                  </label>
                   <input
                     v-model="zipCode"
                     type="text"
@@ -359,6 +323,7 @@
                 </div>
               </div>
             </div>
+
             <!-- ปุ่ม สมัครสมาชิก -->
             <button
               type="submit"
@@ -374,10 +339,7 @@
           <!-- Toggle ไปหน้า Login -->
           <div class="mt-6 text-sm text-center text-gray-500">
             มีบัญชีแล้ว?
-            <button
-              @click="isLogin = true"
-              class="text-pink-600 font-semibold hover:underline focus:outline-none"
-            >
+            <button @click="isLogin = true" class="text-pink-600 font-semibold hover:underline focus:outline-none">
               เข้าสู่ระบบ
             </button>
           </div>
@@ -388,7 +350,24 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
+// 1) ติดตั้ง sweetalert2: npm install sweetalert2
+import Swal from 'sweetalert2'
+
+// ฟังก์ชันเช็ค Password Strength (เบื้องต้น)
+function checkPasswordStrength(password) {
+  let strength = 0
+
+  if (password.length >= 6) strength++        // ยาว >= 6
+  if (password.length >= 10) strength++       // ยาว >= 10
+  if (/[A-Z]/.test(password)) strength++      // มีตัวใหญ่
+  if (/\d/.test(password)) strength++         // มีตัวเลข
+  if (/[!@#$%^&*()_+=[\]{};':"\\|,.<>/?-]/.test(password)) strength++ // มีสัญลักษณ์
+
+  if (strength >= 4) return 'strong'
+  if (strength >= 2) return 'medium'
+  return 'weak'
+}
 
 export default {
   data() {
@@ -410,12 +389,11 @@ export default {
       province: '',
       zipCode: '',
       passwordConfirm: '',
-    };
+    }
   },
   mounted() {
     // สมมติจำลองโหลด 2 วินาที
     this.$emit('loading', true);
-
     setTimeout(() => {
       this.$emit('loading', false);
     }, 300);
@@ -427,18 +405,50 @@ export default {
         const response = await axios.post('http://localhost:3000/api/users/login', {
           email: this.email,
           password: this.password,
-        });
-        console.log('Login success:', response.data);
-        alert(response.data.message);
+        })
+        console.log('Login success:', response.data)
+
+        Swal.fire({
+          icon: 'success',
+          title: 'เข้าสู่ระบบสำเร็จ',
+          text: response.data.message || 'Login Success!',
+        })
       } catch (error) {
-        console.error('Login error:', error.response?.data || error.message);
-        alert(error.response?.data?.message || 'เข้าสู่ระบบล้มเหลว');
+        console.error('Login error:', error.response?.data || error.message)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'เข้าสู่ระบบล้มเหลว',
+          text: error.response?.data?.message || error.message,
+        })
       }
     },
 
     // ---------- Register ----------
     async handleRegister() {
       try {
+        // เช็คความซับซ้อนของรหัสผ่านก่อน
+        const passStrength = checkPasswordStrength(this.password)
+        if (passStrength === 'weak') {
+          // แจ้งเตือนว่าอ่อนเกินไป
+          Swal.fire({
+            icon: 'warning',
+            title: 'รหัสผ่านไม่ปลอดภัย',
+            text: 'กรุณาใช้รหัสผ่านที่ซับซ้อนกว่านี้ (เช่น มีตัวพิมพ์ใหญ่ ตัวเลข และสัญลักษณ์)',
+          })
+          return
+        }
+
+        // เช็คว่ารหัสผ่านกับ confirm ตรงกันไหม
+        if (this.password !== this.passwordConfirm) {
+          Swal.fire({
+            icon: 'error',
+            title: 'รหัสผ่านไม่ตรงกัน',
+            text: 'กรุณายืนยันรหัสผ่านให้ถูกต้อง',
+          })
+          return
+        }
+
         const registerData = {
           firstName: this.firstName,
           lastName: this.lastName,
@@ -451,30 +461,51 @@ export default {
           zipCode: this.zipCode,
           password: this.password,
           passwordConfirm: this.passwordConfirm,
-        };
+        }
 
-        const response = await axios.post('http://localhost:3000/api/users/register', registerData);
-        console.log('Register success:', response.data);
-        alert(response.data.message);
+        // เรียก API สมัครสมาชิก
+        const response = await axios.post('http://localhost:3000/api/users/register', registerData)
+        console.log('Register success:', response.data)
+
+        Swal.fire({
+          icon: 'success',
+          title: 'สมัครสมาชิกสำเร็จ!',
+          text: response.data.message || 'Register Success!',
+        })
 
         // กลับไปหน้า Login
-        this.isLogin = true;
+        this.isLogin = true
       } catch (error) {
-        console.error('Register error:', error.response?.data || error.message);
-        alert(error.response?.data?.message || 'สมัครสมาชิกล้มเหลว');
+        console.error('Register error:', error.response?.data || error.message)
+
+        Swal.fire({
+          icon: 'error',
+          title: 'สมัครสมาชิกล้มเหลว',
+          text: error.response?.data?.message || error.message,
+        })
       }
     },
 
     handleLoginWithGoogle() {
-      console.log(this.isLogin ? 'Login with Google' : 'Register with Google');
-      // อาจเรียก OAuth
+      console.log(this.isLogin ? 'Login with Google' : 'Register with Google')
+
+      Swal.fire({
+        icon: 'info',
+        title: 'Google OAuth',
+        text: 'ตัวอย่างเมื่อต้องการเชื่อมต่อ Google OAuth',
+      })
     },
     handleLoginWithLine() {
-      console.log(this.isLogin ? 'Login with LINE' : 'Register with LINE');
-      // อาจเรียก OAuth
+      console.log(this.isLogin ? 'Login with LINE' : 'Register with LINE')
+
+      Swal.fire({
+        icon: 'info',
+        title: 'LINE OAuth',
+        text: 'ตัวอย่างเมื่อต้องการเชื่อมต่อ LINE OAuth',
+      })
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -511,12 +542,12 @@ export default {
 }
 
 .auth-card-front {
-  background-color: transparent; 
+  background-color: transparent;
   transform: rotateY(0deg);
 }
 
 .auth-card-back {
-  background-color: transparent; 
+  background-color: transparent;
   transform: rotateY(180deg);
 }
 </style>
