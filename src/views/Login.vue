@@ -388,28 +388,29 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      // ควบคุม (Login / Register)
+      // เพื่อสลับหน้า (Login / Register)
       isLogin: true,
-      
-      // ข้อมูลสำหรับ Login
+
+      // สำหรับ Login
       email: '',
       password: '',
 
-      // ข้อมูลสำหรับ Register
+      // สำหรับ Register
       firstName: '',
       lastName: '',
       phoneNumber: '',
-      emailRegister: '',
       address: '',
       subDistrict: '',
       district: '',
       province: '',
       zipCode: '',
       passwordConfirm: '',
-    }
+    };
   },
   mounted() {
     // สมมติจำลองโหลด 2 วินาที
@@ -420,32 +421,57 @@ export default {
     }, 300);
   },
   methods: {
-    handleLogin() {
-      console.log('Login:', { email: this.email, password: this.password });
-      // TODO: เรียก API ล็อกอิน หรือเพิ่ม Logic ตรวจสอบ
+    // ---------- Login ----------
+    async handleLogin() {
+      try {
+        const response = await axios.post('http://localhost:3000/api/users/login', {
+          email: this.email,
+          password: this.password,
+        });
+        console.log('Login success:', response.data);
+        alert(response.data.message);
+      } catch (error) {
+        console.error('Login error:', error.response?.data || error.message);
+        alert(error.response?.data?.message || 'เข้าสู่ระบบล้มเหลว');
+      }
     },
-    handleRegister() {
-      const registerData = {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        phoneNumber: this.phoneNumber,
-        email: this.email,
-        address: this.address,
-        subDistrict: this.subDistrict,
-        district: this.district,
-        province: this.province,
-        zipCode: this.zipCode,
-        password: this.password,
-        passwordConfirm: this.passwordConfirm,
-      };
-      console.log('Register:', registerData);
-      // TODO: เรียก API สมัครสมาชิก หรือเพิ่ม Logic ตรวจสอบ
+
+    // ---------- Register ----------
+    async handleRegister() {
+      try {
+        const registerData = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          phoneNumber: this.phoneNumber,
+          email: this.email,
+          address: this.address,
+          subDistrict: this.subDistrict,
+          district: this.district,
+          province: this.province,
+          zipCode: this.zipCode,
+          password: this.password,
+          passwordConfirm: this.passwordConfirm,
+        };
+
+        const response = await axios.post('http://localhost:3000/api/users/register', registerData);
+        console.log('Register success:', response.data);
+        alert(response.data.message);
+
+        // กลับไปหน้า Login
+        this.isLogin = true;
+      } catch (error) {
+        console.error('Register error:', error.response?.data || error.message);
+        alert(error.response?.data?.message || 'สมัครสมาชิกล้มเหลว');
+      }
     },
+
     handleLoginWithGoogle() {
       console.log(this.isLogin ? 'Login with Google' : 'Register with Google');
+      // อาจเรียก OAuth
     },
     handleLoginWithLine() {
       console.log(this.isLogin ? 'Login with LINE' : 'Register with LINE');
+      // อาจเรียก OAuth
     },
   },
 };
